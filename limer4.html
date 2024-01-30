@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>limer4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mainbar {
+            height: 7vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(38, 38, 38);
+            /* border: 1px solid red; */
+
+
+        }
+
+        .smallbox {
+            height: 6vh;
+            width: 15%;
+            /* border: 1px solid yellow; */
+        }
+
+        .smallboxs {
+            height: 6vh;
+            width: 100px;
+            /* border: 1px solid yellow; */
+        }
+
+        .img1 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .button1 {
+            height: 6vh;
+            width: 80%;
+            border-radius: 5px;
+            background-color: rgb(130, 180, 64);
+            color: white;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bolder;
+            border: none;
+        }
+
+        @media screen and (max-width:1071px) {
+            .mainbar {
+                width: auto;
+            }
+
+            .smallbox {
+                width: 100px;
+            }
+
+        }
+
+        .parent1 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+            /* border: 1px solid; */
+
+        }
+
+        .mainbar2 {
+            height: 20vh;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            display: grid;
+            grid-template-columns: 20% 35% 45%;
+            grid-template-rows: 60px 60px 60px;
+            padding-left: 40px;
+            padding-top: 40px;
+            z-index: 2;
+            background-color: white;
+            /* border: 1px solid; */
+        }
+
+        .mainbar2 {
+            height: 20vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 35% 45%;
+            grid-template-rows: 60px 60px 60px;
+            padding-left: 40px;
+            padding-top: 40px;
+            /* border: 1px solid; */
+        }
+
+        .smallbox2 {
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15%;
+            grid-template-rows: 35px;
+            padding-left: 10px;
+            padding-top: 8px;
+            gap: 10px;
+            /* border: 1px solid; */
+
+        }
+
+        .iconboxes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .bars:hover {
+            color: rgb(255, 50, 114);
+            cursor: pointer;
+        }
+
+        .smallbox3 {
+            display: grid;
+            grid-template-columns: 5%;
+            grid-template-rows: 50px;
+            padding-left: 60%;
+            padding-top: 8px;
+            gap: 10px;
+            cursor: pointer;
+            /* border: 1px solid; */
+
+        }
+
+        .content {
+            height: 9vh;
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 15% 15% 19% 14% 19% 5%;
+            grid-template-rows: 50px;
+            padding-left: 5%;
+            /* border: 1px solid red; */
+
+
+
+        }
+
+        .list22 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(255, 82, 135);
+        }
+
+        .list {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+
+            list-style: none;
+        }
+
+        .list:hover {
+            color: rgb(255, 82, 135);
+            cursor: pointer;
+        }
+
+        .listbox {
+            height: 47vh;
+            width: 40%;
+            left: 5%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            box-shadow: 1px 2px 12px 2px gray;
+            z-index: 2;
+            background-color: white;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+
+        }
+
+        .list:hover .listbox {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+
+        }
+
+        .listbox2 {
+            height: 47vh;
+            width: 40%;
+            left: 15%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+        }
+
+        .list:hover .listbox2 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+        .listbox3 {
+            height: 47vh;
+            width: 40%;
+            left: 30%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+        }
+
+        .list:hover .listbox3 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+        .listbox4 {
+            height: 47vh;
+            width: 40%;
+            left: 50%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+
+        }
+
+        .list:hover .listbox4 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+
+
+        .content2 {
+            height: 7vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 5px;
+            border-top: 1px solid rgb(216, 213, 213);
+        }
+
+        .list2 {
+            list-style: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: lighter;
+            padding-left: 18px;
+            padding-top: 10px;
+            color: black;
+        }
+
+        .divbox {
+            height: 7vh;
+            width: 10%;
+            left: -10%;
+            top: 0;
+            position: absolute;
+            opacity: 1;
+            transition: all linear 0.3s;
+            background-color: rgba(255, 50, 115, 0.808);
+
+        }
+
+
+
+
+
+
+        .list2:hover .divbox {
+            width: 100%;
+            opacity: 0;
+            left: 5%;
+
+        }
+
+
+
+
+
+
+        .box1 {
+            margin-left: 20%;
+            margin-top: 18px;
+            /* border: 1px solid; */
+        }
+
+        .fa:hover {
+            color: rgb(255, 82, 135);
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:1071px) {
+
+            .list {
+                font-size: 10px;
+            }
+
+            .smallbox3 {
+                width: 20%;
+                padding-left: 20%;
+            }
+
+        }
+
+        @media screen and (max-width:865px) {
+
+            .mainbar2 {
+                display: none;
+            }
+
+
+        }
+
+        .mainbar3 {
+            height: 8vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            display: none;
+            /* border: 1px solid; */
+        }
+
+        .minibox {
+            height: 7vh;
+            width: 15%;
+            padding-left: 20px;
+            /* border: 1px solid; */
+        }
+
+        .minibox2 {
+            height: 7vh;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        @media screen and (max-width:865px) {
+            .mainbar3 {
+                display: flex;
+            }
+        }
+
+        .bigtextbox {
+            height: auto;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            /* border: 1px solid; */
+
+
+        }
+
+        .box2 {
+            height: auto;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: lighter;
+            color: gray;
+        }
+
+        .box3 {
+            height: auto;
+            width: 50%;
+            position: relative;
+            /* border: 1px solid; */
+        }
+
+        .Circle {
+            height: 150px;
+            width: 150px;
+            border-radius: 100px;
+            background-color: rgb(255, 233, 145);
+            /* border: 1px solid; */
+
+        }
+
+        .cricle2 {
+            height: 40px;
+            width: 40px;
+            left: 83%;
+            top: -38px;
+            z-index: 0;
+            position: absolute;
+            border-radius: 100px;
+            background-color: rgb(165, 255, 214);
+            /* border: 1px solid; */
+        }
+
+        .spn {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 60px;
+            font-weight: bolder;
+            color: rgb(255, 193, 251);
+        }
+
+        .longdiv {
+            height: auto;
+            width: 350px;
+            left: 5%;
+            top: 40px;
+            position: absolute;
+            /* border: 1px solid; */
+        }
+
+        .text2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 65px;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 0.836);
+        }
+
+        .para {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 25px;
+            padding-top: 18px;
+            color: rgba(0, 0, 0, 0.836);
+        }
+
+        @media screen and (max-width:583px) {
+            .bigtextbox {
+                width: 100%;
+            }
+
+            .longdiv {
+                width: 230px;
+            }
+
+            .text2 {
+                font-size: 40px;
+            }
+        }
+
+        .parent2 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            /* border: 1px solid; */
+        }
+
+        .childbox {
+            height: auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 80%;
+            grid-template-rows: 120px 125px 125px 125px 125px;
+            padding-left: 20px;
+            /* border: 1px solid;    */
+        }
+
+        .textbox {
+            /* border: 1px solid; */
+        }
+
+        .heading {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.747);
+        }
+
+        .line {
+            height: 4px;
+            width: 80px;
+            margin-top: 10px;
+            background-color: rgb(255, 56, 103);
+            /* border: 1px solid; */
+        }
+
+        #para2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 28px;
+        }
+
+        .smallbox4 {
+            height: 40px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .text3 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            color: black;
+        }
+
+        .text3:hover {
+            color: rgb(255, 50, 114);
+        }
+
+        .childbox2 {
+            height: 95vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            /* border: 1px solid; */
+
+
+        }
+
+        .bigbox {
+            height: 600px;
+            width: 600px;
+            left: 26%;
+            top: -80px;
+            overflow: hidden;
+            background-image: url(circle-one.png);
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            border-radius: 500px;
+            /* border: 1px solid; */
+            animation: img2 8s linear infinite;
+
+        }
+
+        @keyframes img2 {
+            0% {
+                transform: rotate(0deg);
+
+            }
+
+
+
+            100% {
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+
+        .photobox {
+            height: 80vh;
+            width: 100%;
+            left: 5%;
+            top: 100px;
+            background-image: url(mokeup.png);
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            /* border: 1px solid; */
+        }
+
+        @media screen and (max-width:1071px) {
+            .parent2 {
+                flex-direction: column;
+            }
+
+            .childbox {
+                width: 100%;
+            }
+
+        }
+
+        @media screen and (max-width:609px) {
+            .heading {
+                font-size: 30px;
+            }
+
+            #para2 {
+                font-size: 9px;
+            }
+
+
+        }
+
+        .parent3 {
+            height: 80vh;
+            width: 100%;
+            /* border: 1px solid; */
+        }
+
+        .mainslider {
+            height: 70vh;
+            width: 90%;
+            margin: auto;
+            margin-top: 50px;
+            overflow: hidden;
+            /* border: 3px solid red; */
+
+        }
+
+        .slidebox {
+            height: 100%;
+            width: 300%;
+            /* border: 3px solid lime; */
+
+            animation-name: slidebox;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            animation-direction: alternate-reverse;
+
+
+        }
+
+        @keyframes slidebox {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: 0;
+            }
+
+            40% {
+                margin-left: -100%;
+            }
+
+            60% {
+                margin-left: -100%;
+            }
+
+            80% {
+                margin-left: -200%;
+            }
+
+            100% {
+                margin-left: -200%;
+            }
+
+
+        }
+
+        .slides {
+            height: 100%;
+            width: 33.25%;
+            position: relative;
+            vertical-align: top;
+            display: inline-block;
+            cursor: grabbing;
+            background-color: rgb(255, 240, 222);
+
+        }
+
+        .childbox3 {
+            height: 50vh;
+            width: 80%;
+            left: 10%;
+            top: 50px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            /* border: 1px solid white; */
+        }
+
+        .circle3 {
+            height: 120px;
+            width: 120px;
+            border-radius: 100px;
+            /* border: 1px solid white; */
+        }
+
+        .img3 {
+            height: 100%;
+            width: 100%;
+            border-radius: 100px;
+        }
+
+        .parabox {
+            height: auto;
+            width: auto;
+            /* border: 1px solid white; */
+        }
+
+        .para3 {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .textbox2 {
+            height: 10vh;
+            width: 20%;
+            /* border: 1px solid white; */
+        }
+
+        .text4 {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 18px;
+        }
+
+        .text5 {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: lighter;
+            font-size: 15px;
+        }
+
+
+        .parent4 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .childbox4 {
+            height: 70vh;
+            width: 28%;
+            position: relative;
+            overflow: hidden;
+            /* border: 1px solid; */
+        }
+
+        .img4 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .box4 {
+            height: 40vh;
+            width: 140%;
+            left: -18%;
+            top: 265px;
+            opacity: 0;
+            position: absolute;
+            transition: all 0.5s linear;
+            transform: rotate(-20deg);
+            background-color: rgba(255, 255, 255, 0.808);
+            /* border: 2px solid white; */
+        }
+
+        .childbox4:hover .box4 {
+            transform: rotate(20deg);
+            opacity: 1;
+        }
+
+        .smalldiv {
+            height: 10vh;
+            width: 35%;
+            left: -20%;
+            top: 250px;
+            position: absolute;
+            overflow: hidden;
+            transform: rotate(-19deg);
+            transition: all 1s linear;
+            opacity: 0;
+            /* border: 1px solid; */
+        }
+
+        .childbox4:hover .smalldiv {
+            left: 5%;
+            top: 100px;
+            opacity: 1;
+        }
+
+        .smalldiv2 {
+            height: 10vh;
+            width: 35%;
+            left: 18%;
+            top: 250px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            overflow: hidden;
+            transform: rotate(-20deg);
+            transition: all 1s linear;
+            opacity: 0;
+            /* border: 1px solid; */
+
+        }
+
+        .iconboxes2 {
+            height: 5vh;
+            width: 15%;
+            /* border: 1px solid; */
+        }
+
+        .childbox4:hover .smalldiv2 {
+            top: 120px;
+            opacity: 1;
+
+        }
+
+        @media screen and (max-width:603px) {
+            .parent4 {
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .childbox4 {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width:519px) {
+
+            .childbox4 {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width:417px) {
+
+            .childbox4 {
+                width: 100%;
+            }
+        }
+
+        .parent5 {
+            height: 20vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .slidebox5 {
+            height: 10vh;
+            width: 80%;
+            overflow: hidden;
+            cursor: pointer;
+            /* border: 1px solid red; */
+        }
+
+        .slidebox6 {
+            height: 10vh;
+            width: 200%;
+            /* border: 3px solid lime; */
+            animation-name: slide4;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            display: flex;
+            align-items: center;
+
+
+
+
+
+        }
+
+        @keyframes slide4 {
+            0% {
+                margin-left: 0%;
+            }
+
+            10% {
+                margin-left: 0%;
+            }
+
+            20% {
+                margin-left: -20%;
+            }
+
+            30% {
+                margin-left: -20%;
+            }
+
+            40% {
+                margin-left: -40%;
+            }
+
+            50% {
+                margin-left: -40%;
+            }
+
+            60% {
+                margin-left: -60%;
+            }
+
+            70% {
+                margin-left: -60%;
+            }
+
+            80% {
+                margin-left: -80%;
+            }
+
+            90% {
+                margin-left: -80%;
+            }
+
+            100% {
+                margin-left: -100%;
+            }
+
+
+        }
+
+
+        .slide4 {
+            height: 15vh;
+            width: 10%;
+            margin-left: 0.2%;
+
+            /* border: 1px solid blue; */
+        }
+
+        .img16 {
+            height: 100%;
+            width: 100%;
+        }
+
+        @media screen and (max-width:975px) {
+            .slidebox6 {
+                height: 10vh;
+                width: 200%;
+                /* border: 3px solid lime; */
+                animation-name: slide4;
+
+                animation-duration: 6s;
+
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+
+
+                display: flex;
+                align-items: center;
+
+
+
+            }
+
+            .slide4 {
+                height: 10vh;
+                width: 10%;
+                margin-left: 0.2%;
+
+                /* border: 1px solid blue; */
+            }
+
+            @keyframes slide4 {
+                0% {
+                    margin-left: 0%;
+                }
+
+                10% {
+                    margin-left: 0%;
+                }
+
+                20% {
+                    margin-left: -20%;
+                }
+
+                30% {
+                    margin-left: -20%;
+                }
+
+                40% {
+                    margin-left: -40%;
+                }
+
+                50% {
+                    margin-left: -40%;
+                }
+
+                60% {
+                    margin-left: -60%;
+                }
+
+                70% {
+                    margin-left: -60%;
+                }
+
+                80% {
+                    margin-left: -80%;
+                }
+
+                90% {
+                    margin-left: -80%;
+                }
+
+                100% {
+                    margin-left: -100%;
+                }
+
+
+            }
+
+
+
+
+
+        }
+
+        @media screen and (max-width:642px) {
+            .slidebox6 {
+                width: 1000%;
+                animation-duration: 10s;
+                animation-name: slide4;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes slide4 {
+                0% {
+                    margin-left: 0%;
+                }
+
+                10% {
+                    margin-left: 0%;
+                }
+
+                20% {
+                    margin-left: -100%;
+                }
+
+                30% {
+                    margin-left: -100%;
+                }
+
+                40% {
+                    margin-left: -200%;
+                }
+
+                50% {
+                    margin-left: -200%;
+                }
+
+                60% {
+                    margin-left: -300%;
+                }
+
+                70% {
+                    margin-left: -300%;
+                }
+
+                80% {
+                    margin-left: -400%;
+                }
+
+                90% {
+                    margin-left: -400%;
+                }
+
+                100% {
+                    margin-left: -500%;
+                }
+
+
+            }
+
+            .slide3 {
+                width: 100%;
+                margin-left: 5px;
+            }
+        }
+
+
+        .parent9 {
+            height: 30vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+            margin-top: 150px;
+            background-color: rgb(244, 249, 255);
+            /* border: 1px solid; */
+        }
+
+        .logobox2 {
+            height: 9vh;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .lasttext {
+            height: 6vh;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .para2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .longbox {
+            height: 8vh;
+            width: 20%;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+
+        .iconboxes3 {
+            height: 5vh;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid; */
+        }
+
+        @media screen and (max-width:636px) {
+            .longbox {
+                width: 200PX;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbar">
+        <div class="smallbox">
+            <img class="img1"
+                src="envato_market-dde916a48af7413e54aa058fe7ae6856752fca799da4bec355f00aea904bfa19 (1).svg" alt="">
+        </div>
+        <div class="smallboxs">
+            <button class="button1">Buy now</button>
+        </div>
+
+    </div>
+
+    <div class="parent1">
+        <div class="mainbar2">
+            <div class="smallbox2">
+                <div class="iconboxes">
+                    <i class="fa-brands fa-facebook-f bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-twitter bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-google-plus-g bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-square-pinterest bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-solid fa-bars bars"></i>
+                </div>
+            </div>
+            <div class="smallbox3">
+                <img src="logo.png" alt="">
+            </div>
+            <ul class="content">
+
+                <li class="list list22">HOME
+                    <div class="listbox">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">ABOUT
+                    <div class="listbox2">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">PORTFOLIO
+                    <div class="listbox3">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">BLOG
+                    <div class="listbox4">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">CONTACT US</li>
+
+
+                <div class="box1">
+                    <i class="fa-solid fa-bars fa"></i>
+                </div>
+
+
+            </ul>
+        </div>
+        <div class="mainbar3">
+            <div class="minibox">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="minibox2">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="bigtextbox">
+            <div class="box2">
+                <h3 class="text">Welcome To Limerick</h3>
+            </div>
+            <div class="box3">
+                <div class="Circle"></div>
+                <div class="longdiv">
+                    <div class="cricle2"></div>
+                    <h1 class="text2">ABOUT US</h1>
+                </div>
+            </div>
+            <p class="para">
+                I like to think that my work is a living, breathing embodiment of my passion for discovery.
+                Here’s some of it.</p>
+
+        </div>
+        <div class="parent2">
+            <div class="childbox">
+                <div class="textbox">
+                    <h1 class="heading">We Create <br>
+                        Design & Technology</h1>
+                    <div class="line"></div>
+                </div>
+                <div class="textbox">
+                    <p id="para2">Breathing embodiment of my passion for discovery. Here’s some of it. Capitalize on
+                        low hanging fruit to identify a ballpark value added activity to beta test. Override the digital
+                        divide with additional clickthroughs from DevOps.</p>
+                </div>
+                <div class="textbox">
+                    <div class="smallbox4">
+                        <h2 class="text3">Mission</h2>
+                    </div>
+                    <p id="para2">Fruit to identify a ballpark value added activity to beta test. Override the
+                        digital divide with additional</p>
+                </div>
+                <div class="textbox">
+                    <div class="smallbox4">
+                        <h2 class="text3">Vision</h2>
+                    </div>
+                    <p id="para2">
+                        Fruit to identify a ballpark value added activity to beta</p>
+                </div>
+                <div class="textbox">
+                    <div class="smallbox4">
+                        <h2 class="text3">Value</h2>
+                    </div>
+                    <p id="para2">
+                        Fruit to identify a ballpark value added activity to beta test. Override the digital divide with
+                        additional
+                    </p>
+                </div>
+            </div>
+            <div class="childbox2">
+                <div class="bigbox"></div>
+
+
+                <div class="photobox"></div>
+            </div>
+
+
+        </div>
+        <div class="parent3">
+            <div class="mainslider">
+                <div class="slidebox">
+                    <div class="slides">
+                        <div class="childbox3">
+                            <div class="circle3">
+                                <img class="img3" src="author-1.jpg" alt="">
+                            </div>
+                            <div class="parabox">
+                                <p class="para3">
+                                    Leverage agile frameworks to provide a robust synopsis for high level overviews.
+                                    Iterative approaches to corporate strategy foster collaborative thinking to further
+                                    the overall
+                                </p>
+                            </div>
+                            <div class="textbox2">
+                                <div class="text4">JOHN DOUE</div>
+                                <div class="text5">Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="childbox3">
+                            <div class="circle3">
+                                <img class="img3" src="author-1.jpg" alt="">
+                            </div>
+                            <div class="parabox">
+                                <p class="para3">
+                                    Leverage agile frameworks to provide a robust synopsis for high level overviews.
+                                    Iterative approaches to corporate strategy foster collaborative thinking to further
+                                    the overall
+                                </p>
+                            </div>
+                            <div class="textbox2">
+                                <div class="text4">JOHN DOUE</div>
+                                <div class="text5">Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slides">
+                        <div class="childbox3">
+                            <div class="circle3">
+                                <img class="img3" src="author-1.jpg" alt="">
+                            </div>
+                            <div class="parabox">
+                                <p class="para3">
+                                    Leverage agile frameworks to provide a robust synopsis for high level overviews.
+                                    Iterative approaches to corporate strategy foster collaborative thinking to further
+                                    the overall
+                                </p>
+                            </div>
+                            <div class="textbox2">
+                                <div class="text4">JOHN DOUE</div>
+                                <div class="text5">Designer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parent4">
+            <div class="childbox4">
+                <img class="img4" src="team-1.jpg" alt="">
+                <div class="box4">
+                    <div class="smalldiv">
+                        <h2 class="text4">JOHN DOUE</h2>
+                        <div class="text5">Designer</div>
+                    </div>
+                    <div class="smalldiv2">
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="childbox4">
+                <img class="img4" src="team-2.jpg" alt="">
+
+
+                <div class="box4">
+                    <div class="smalldiv">
+                        <h2 class="text4">JOHN DOUE</h2>
+                        <div class="text5">Designer</div>
+                    </div>
+                    <div class="smalldiv2">
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="childbox4">
+                <img class="img4" src="team-3.jpg" alt="">
+
+
+
+                <div class="box4">
+                    <div class="smalldiv">
+                        <h2 class="text4">JOHN DOUE</h2>
+                        <div class="text5">Designer</div>
+                    </div>
+                    <div class="smalldiv2">
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div class="iconboxes2">
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="parent5">
+            <div class="slidebox5">
+                <div class="slidebox6">
+                    <div class="slide4"><img class="img16" src="./1.jpg" alt=""></div>
+                    <div class="slide4">
+                        <img class="img16" src="./2.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./3.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./4.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./1.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./2.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./3.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./4.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./2.jpg" alt="">
+                    </div>
+                    <div class="slide4">
+                        <img class="img16" src="./1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parent9">
+            <div class="logobox2">
+                <img src="http://t.commonsupport.xyz/limerick/images/footer-logo.png" alt="">
+            </div>
+            <div class="lasttext">
+                <p class="para2">© Copyright 2019 Limerick. All Rights Reserved</p>
+            </div>
+            <div class="longbox">
+
+                <div class="iconboxes3">
+                    <i class="fa-brands fa-facebook-f bars"></i>
+                </div>
+                <div class="iconboxes3">
+                    <i class="fa-brands fa-twitter bars"></i>
+                </div>
+                <div class="iconboxes3">
+                    <i class="fa-brands fa-google-plus-g bars"></i>
+                </div>
+                <div class="iconboxes3">
+                    <i class="fa-solid fa-globe bars"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
